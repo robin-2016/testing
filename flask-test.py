@@ -1,5 +1,5 @@
 #_*_coding:utf-8_*_
-import os,sys,pprint,platform,time
+import time
 from flask import Flask
 #print os.getcwd()     #打印工作的目录
 #pprint.pprint(sys.path)
