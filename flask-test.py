@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
 	data = {}
-	data['name'] = "Hello robin !"
+	data['name'] = "Hello Robin !"
 	data['time_now'] = time.strftime('%Y-%m-%d %X',time.localtime(time.time()))
 	return (data['name'] + data['time_now'])
 if __name__ == "__main__":
