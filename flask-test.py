@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
 	data = {}
-	data['name'] = "Hello Robin !"
+	data['name'] = "Robin"
 	data['time_now'] = time.strftime('%Y-%m-%d %X',time.localtime(time.time()))
 	#wealth
 	url = 'http://apis.baidu.com/apistore/weatherservice/cityid?cityid=101120201'
@@ -22,6 +22,6 @@ def hello():
 		cc = (content.decode("unicode_escape")).encode("utf-8")
     		wealth = eval(cc)
 		data['wealth'] = wealth['retData']
-	return data['name'] + data['time_now'] + data['wealth']['city'] + data['wealth']['time'] + data['wealth']['weather'] + "最低气温：" + data['wealth']['l_tmp'] + "最高气温：" + data['wealth']['h_tmp'] + data['wealth']['WD'] + data['wealth']['WS'] + data['wealth']['sunrise'] + data['wealth']['sunset']
+	return render_template('template1.html',data=data,wealth=data['wealth'])
 if __name__ == "__main__":
 	app.run(host='0.0.0.0',port=80)
